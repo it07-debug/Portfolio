@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammad Iftekhar Uddin Tanvir - CV</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary:#1f2933;
+  --accent:#3f51b5;
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --muted:#6b7280;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--primary);
+}
+
+.container {
+  max-width:1100px;
+  margin:30px auto;
+  background:var(--card);
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  padding:30px;
+}
+
+/* HEADER */
+.header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+  border-bottom:2px solid #e5e7eb;
+  padding-bottom:20px;
+}
+
+.header-left {
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.photo {
+  width:110px;
+  height:130px;
+  border-radius:6px;
+  object-fit:cover;
+  border:2px solid #e5e7eb;
+}
+
+.header h1 {
+  margin:0;
+  font-size:28px;
+}
+
+.header span {
+  color:var(--accent);
+  font-weight:500;
+}
+
+.contact {
+  font-size:14px;
+  text-align:right;
+}
+
+/* TABS */
+.tabs {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:25px 0;
+}
+
+.tab-btn {
+  padding:10px 18px;
+  border:none;
+  border-radius:6px;
+  background:#e5e7eb;
+  font-size:14px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.tab-btn.active {
+  background:var(--accent);
+  color:#fff;
+}
+
+.tab-btn:hover {
+  background:#c7d2fe;
+}
+
+/* CONTENT */
+.tab-content {
+  display:none;
+  animation:fade .3s ease-in-out;
+}
+
+.tab-content.active {
+  display:block;
+}
+
+@keyframes fade {
+  from {opacity:0; transform:translateY(5px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+.section {
+  margin-bottom:25px;
+}
+
+.section h2 {
+  border-bottom:2px solid #e5e7eb;
+  padding-bottom:5px;
+  margin-bottom:15px;
+}
+
+.item h3 {
+  margin:0;
+  font-size:16px;
+}
+
+.item span {
+  font-size:13px;
+  color:var(--muted);
+}
+
+ul {
+  padding-left:18px;
+}
+
+ul li {
+  margin-bottom:6px;
+  font-size:14px;
+}
+
+.badge {
+  display:inline-block;
+  background:#eef2ff;
+  color:var(--accent);
+  padding:6px 12px;
+  border-radius:14px;
+  font-size:12px;
+  margin:5px 5px 0 0;
+}
+
+/* VIDEO */
+.video-wrapper {
+  max-width:700px;
+  margin:auto;
+}
+
+video {
+  width:100%;
+  border-radius:10px;
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+footer {
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:30px;
+}
+
+@media(max-width:768px){
+  .header {justify-content:center; text-align:center;}
+  .header-left {flex-direction:column;}
+  .contact {text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <img src="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-railway/2024/12/02cae8e68e394a778fd6f55c4b5cad6d.jpeg" alt="Profile Photo" class="photo">
+      <div>
+        <h1>Mohammad Iftekhar Uddin Tanvir</h1>
+
+        <div style="font-weight:600; color:#1f2933; margin-top:4px;">
+            Assistant Maintenance Engineer-2
+        </div>
+
+        <div style="font-size:14px; color:#3f51b5; margin-bottom:4px;">
+            ICT Section, Bangladesh Railway
+        </div>
+
+        <span>B.Sc. Engg. (Electrical & Electronic Engineering)</span>
+    </div>
+
+    </div>
+
+    <div class="contact">
+      📧 iftekhartanvir07@gmail.com<br>
+      📞 +88 01628 663015<br>
+      🔗 linkedin.com/in/itanvir
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="openTab('profile', this)">Profile</button>
+    <button class="tab-btn" onclick="openTab('personal', this)">Personal Info</button>
+    <button class="tab-btn" onclick="openTab('education', this)">Education</button>
+    <button class="tab-btn" onclick="openTab('experience', this)">Experience</button>
+    <button class="tab-btn" onclick="openTab('skills', this)">Skills</button>
+    <button class="tab-btn" onclick="openTab('projects', this)">Projects</button>
+    <button class="tab-btn" onclick="openTab('training', this)">Training</button>
+    <button class="tab-btn" onclick="openTab('video', this)">Video CV</button>
+    <button class="tab-btn" onclick="openTab('audio', this)">Audio CV</button>
+    <button class="tab-btn" onclick="openTab('references', this)">References</button>
+  </div>
+
+  <!-- PROFILE -->
+  <div id="profile" class="tab-content active">
+    <div class="section">
+      <h2>Career Objective</h2>
+      <p>
+        To serve in a responsible engineering and ICT-focused role 
+        where I can effectively apply my knowledge of electrical engineering,
+         information and communication technology, and system maintenance 
+         to ensure reliable operations and continuous improvement.
+          I aim to contribute to organizational efficiency, safety, and technological advancement while developing my professional skills through practical experience and continuous learning.
+      </p>
+    </div>
+  </div>
+
+  <!-- PERSONAL INFO -->
+<div id="personal" class="tab-content">
+  <div class="section">
+    <h2>Personal Information</h2>
+    <ul>
+      <li><strong>Date of Birth:</strong> </li>
+      <li><strong>Nationality:</strong> Bangladeshi</li>
+      <li><strong>Gender:</strong> Male</li>
+      <li><strong>Religion:</strong> Islam</li>
+      <li><strong>Marital Status:</strong> Single</li>
+      <li><strong>Hometown:</strong> Chittagong</li>
+      <li><strong>Languages:</strong> Bengali, English, Hindi</li>
+      <li><strong>NID No:</strong> </li>
+      <li><strong>Interests:</strong> Travelling, Cycling, Reading</li>
+    </ul>
+  </div>
+</div>
+
+  <!-- EDUCATION -->
+  <div id="education" class="tab-content">
+    <div class="section">
+      <h2>Education</h2>
+      <div class="item">
+        <h3>B.Sc. in Electrical & Electronic Engineering</h3>
+        <span>University of Chittagong | 2013–2017 | CGPA: --/4.00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div id="experience" class="tab-content">
+    <div class="section">
+      <h2>Work Experience</h2>
+      <div class="item">
+        <h3>Assistant Maintenance Engineer-2</h3>
+        <span>ICT Section, Bangladesh Railway | 2024 – Present</span>
+        <ul>
+            <li>Maintenance and support of ICT infrastructure and systems</li>
+            <li>Monitoring, troubleshooting, and ensuring operational continuity</li>
+            <li>Assisting in system upgrades, documentation, and technical reporting</li>
+            <li>Coordination with engineering and operations teams</li>
+        </ul>
+      </div>
+
+      
+      <div class="item">
+        <h3>Assistant Engineer (Electrical) – Part Time</h3>
+        <span>GiANT Concept Ltd. | Jul 2019 – Aug 2019</span>
+        <ul>
+          <li>Electrical wiring design</li>
+          <li>5D Cinema Hall setup</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div id="skills" class="tab-content">
+    <div class="section">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li>MATLAB, Simulink, Proteus, P-Spice</li>
+        <li>HTML, CSS, JavaScript, PHP, SQL</li>
+        <li>Arduino, PLC, AutoCAD</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="projects" class="tab-content">
+    <div class="section">
+      <h2>Projects</h2>
+      <span class="badge">Automated Tortilla Maker</span>
+      <span class="badge">5D Cinema Hall</span>
+      <span class="badge">CNC Machine</span>
+      <span class="badge">Line Follower Robot</span>
+    </div>
+  </div>
+
+  <!-- TRAINING -->
+  <div id="training" class="tab-content">
+    <div class="section">
+      <h2>Training & Certifications</h2>
+      <ul>
+        <li>LICT Top-Up IT Training – Web Development</li>
+        <li>Industrial Control Technology – TICI</li>
+        <li>Transformer Maintenance – BPDB</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- VIDEO CV -->
+  <div id="video" class="tab-content">
+    <div class="section">
+      <h2>Video CV</h2>
+      <p>This short video highlights my background, skills, and career goals.</p>
+
+      <div class="video-wrapper">
+        <video controls poster="https://dummyimage.com/800x450/cccccc/000000&text=Video+CV+Preview">
+          <source src="video-cv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUDIO CV -->
+    <div id="audio" class="tab-content">
+    <div class="section">
+        <h2>Audio Podcast CV</h2>
+        <p>
+        This audio presentation provides a concise overview of my professional
+        background, technical expertise, and career objectives.
+        </p>
+
+        <div style="max-width:500px; margin:auto; text-align:center;">
+        <audio controls style="width:100%; margin-top:15px;">
+            <source src="audio-cv.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <p style="font-size:13px; color:#6b7280; margin-top:8px;">
+            Duration: ~1–2 minutes
+        </p>
+        </div>
+    </div>
+    </div>
+
+
+  <!-- REFERENCES -->
+  <div id="references" class="tab-content">
+    <div class="section">
+      <h2>References</h2>
+      <p><strong>Saumitra Kumar Kuri</strong><br>
+      Assistant Professor, University of Chittagong</p>
+
+      <p><strong>Engr. Md. Nazrul Islam</strong><br>
+      Managing Director, Khulna Newsprint Mills Ltd.</p>
+    </div>
+  </div>
+
+  <footer>
+    © Mohammad Iftekhar Uddin Tanvir
+  </footer>
+
+</div>
+
+<script>
+function openTab(tabId, btn) {
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
