@@ -25,6 +25,55 @@ body {
   color:var(--primary);
 }
 
+/* LOGIN OVERLAY STYLES */
+#login-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: white;
+}
+
+.login-box {
+  background: var(--card);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: var(--primary);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 400px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* MAIN CONTENT (Hidden by default) */
+#cv-content {
+  display: none;
+}
+
 .container {
   max-width:1100px;
   margin:30px auto;
@@ -182,214 +231,119 @@ footer {
 </head>
 <body>
 
-<div class="container">
-
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-left">
-      <img src="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-railway/2024/12/02cae8e68e394a778fd6f55c4b5cad6d.jpeg" alt="Profile Photo" class="photo">
-      <div>
-        <h1>Mohammad Iftekhar Uddin Tanvir</h1>
-
-        <div style="font-weight:600; color:#1f2933; margin-top:4px;">
-            Assistant Maintenance Engineer-2
-        </div>
-
-        <div style="font-size:14px; color:#3f51b5; margin-bottom:4px;">
-            ICT Section, Bangladesh Railway
-        </div>
-
-        <span>B.Sc. Engg. (Electrical & Electronic Engineering)</span>
-    </div>
-
-    </div>
-
-    <div class="contact">
-      📧 abcd@gmail.com<br>
-      📞 +00 00000 000000<br>
-      🔗 linkedin.com/in/abcd
-    </div>
-  </div>
-
-  <!-- TABS -->
-  <div class="tabs">
-    <button class="tab-btn active" onclick="openTab('profile', this)">Profile</button>
-    <button class="tab-btn" onclick="openTab('personal', this)">Personal Info</button>
-    <button class="tab-btn" onclick="openTab('education', this)">Education</button>
-    <button class="tab-btn" onclick="openTab('experience', this)">Experience</button>
-    <button class="tab-btn" onclick="openTab('skills', this)">Skills</button>
-    <button class="tab-btn" onclick="openTab('projects', this)">Projects</button>
-    <button class="tab-btn" onclick="openTab('training', this)">Training</button>
-    <button class="tab-btn" onclick="openTab('video', this)">Video CV</button>
-    <button class="tab-btn" onclick="openTab('audio', this)">Audio CV</button>
-    <button class="tab-btn" onclick="openTab('references', this)">References</button>
-  </div>
-
-  <!-- PROFILE -->
-  <div id="profile" class="tab-content active">
-    <div class="section">
-      <h2>Career Objective</h2>
-      <p>
-        To serve in a responsible engineering and ICT-focused role 
-        where I can effectively apply my knowledge of electrical engineering,
-         information and communication technology, and system maintenance 
-         to ensure reliable operations and continuous improvement.
-          I aim to contribute to organizational efficiency, safety, and technological advancement while developing my professional skills through practical experience and continuous learning.
-      </p>
-    </div>
-  </div>
-
-  <!-- PERSONAL INFO -->
-<div id="personal" class="tab-content">
-  <div class="section">
-    <h2>Personal Information</h2>
-    <ul>
-      <li><strong>Date of Birth:</strong> </li>
-      <li><strong>Nationality:</strong> Bangladeshi</li>
-      <li><strong>Gender:</strong> Male</li>
-      <li><strong>Religion:</strong> Islam</li>
-      <li><strong>Marital Status:</strong> Single</li>
-      <li><strong>Hometown:</strong> Chittagong</li>
-      <li><strong>Languages:</strong> Bengali, English, Hindi</li>
-      <li><strong>NID No:</strong> </li>
-      <li><strong>Interests:</strong> Travelling, Cycling, Reading</li>
-    </ul>
+<div id="login-overlay">
+  <div class="login-box">
+    <h2>Private CV</h2>
+    <p>Please enter the password to view</p>
+    <input type="password" id="passwordInput" placeholder="Enter Password">
+    <button onclick="checkPassword()">Login</button>
+    <p id="error-msg" style="color:red; display:none; margin-top:10px; font-size:14px;">Incorrect Password!</p>
   </div>
 </div>
 
-  <!-- EDUCATION -->
-  <div id="education" class="tab-content">
-    <div class="section">
-      <h2>Education</h2>
-      <div class="item">
-        <h3>B.Sc. in Electrical & Electronic Engineering</h3>
-        <span>University of Chittagong | 2013–2017 | CGPA: --/4.00</span>
-      </div>
-    </div>
-  </div>
+<div id="cv-content">
+  <div class="container">
 
-  <!-- EXPERIENCE -->
-  <div id="experience" class="tab-content">
-    <div class="section">
-      <h2>Work Experience</h2>
-      <div class="item">
-        <h3>Assistant Maintenance Engineer-2</h3>
-        <span>ICT Section, Bangladesh Railway | 2024 – Present</span>
-        <ul>
-            <li>Maintenance and support of ICT infrastructure and systems</li>
-            <li>Monitoring, troubleshooting, and ensuring operational continuity</li>
-            <li>Assisting in system upgrades, documentation, and technical reporting</li>
-            <li>Coordination with engineering and operations teams</li>
-        </ul>
-      </div>
-
-      
-      <div class="item">
-        <h3>Assistant Engineer (Electrical) – Part Time</h3>
-        <span>GiANT Concept Ltd. | Jul 2019 – Aug 2019</span>
-        <ul>
-          <li>Electrical wiring design</li>
-          <li>5D Cinema Hall setup</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- SKILLS -->
-  <div id="skills" class="tab-content">
-    <div class="section">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li>MATLAB, Simulink, Proteus, P-Spice</li>
-        <li>HTML, CSS, JavaScript, PHP, SQL</li>
-        <li>Arduino, PLC, AutoCAD</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <div id="projects" class="tab-content">
-    <div class="section">
-      <h2>Projects</h2>
-      <span class="badge">Automated Tortilla Maker</span>
-      <span class="badge">5D Cinema Hall</span>
-      <span class="badge">CNC Machine</span>
-      <span class="badge">Line Follower Robot</span>
-    </div>
-  </div>
-
-  <!-- TRAINING -->
-  <div id="training" class="tab-content">
-    <div class="section">
-      <h2>Training & Certifications</h2>
-      <ul>
-        <li>LICT Top-Up IT Training – Web Development</li>
-        <li>Industrial Control Technology – TICI</li>
-        <li>Transformer Maintenance – BPDB</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- VIDEO CV -->
-  <div id="video" class="tab-content">
-    <div class="section">
-      <h2>Video CV</h2>
-      <p>This short video highlights my background, skills, and career goals.</p>
-
-      <div class="video-wrapper">
-        <video controls poster="https://dummyimage.com/800x450/cccccc/000000&text=Video+CV+Preview">
-          <source src="Motion Cv Graphic Animation Portfolio After Effect .mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </div>
-
-  <!-- AUDIO CV -->
-    <div id="audio" class="tab-content">
-    <div class="section">
-        <h2>Audio Podcast CV</h2>
-        <p>
-        This audio presentation provides a concise overview of my professional
-        background, technical expertise, and career objectives.
-        </p>
-
-        <div style="max-width:500px; margin:auto; text-align:center;">
-        <audio controls style="width:100%; margin-top:15px;">
-            <source src="audio-cv.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <p style="font-size:13px; color:#6b7280; margin-top:8px;">
-            Duration: ~1–2 minutes
-        </p>
+    <div class="header">
+      <div class="header-left">
+        <img src="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-railway/2024/12/02cae8e68e394a778fd6f55c4b5cad6d.jpeg" alt="Profile Photo" class="photo">
+        <div>
+          <h1>Mohammad Iftekhar Uddin Tanvir</h1>
+          <div style="font-weight:600; color:#1f2933; margin-top:4px;">Assistant Maintenance Engineer-2</div>
+          <div style="font-size:14px; color:#3f51b5; margin-bottom:4px;">ICT Section, Bangladesh Railway</div>
+          <span>B.Sc. Engg. (Electrical & Electronic Engineering)</span>
         </div>
-    </div>
+      </div>
+      <div class="contact">
+        📧 abcd@gmail.com<br>
+        📞 +00 00000 000000<br>
+        🔗 linkedin.com/in/abcd
+      </div>
     </div>
 
-
-  <!-- REFERENCES -->
-  <div id="references" class="tab-content">
-    <div class="section">
-      <h2>References</h2>
-      <p><strong>Saumitra Kumar Kuri</strong><br>
-      Assistant Professor, University of Chittagong</p>
-
-      <p><strong>Engr. Md. Nazrul Islam</strong><br>
-      Managing Director, Khulna Newsprint Mills Ltd.</p>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab('profile', this)">Profile</button>
+      <button class="tab-btn" onclick="openTab('personal', this)">Personal Info</button>
+      <button class="tab-btn" onclick="openTab('education', this)">Education</button>
+      <button class="tab-btn" onclick="openTab('experience', this)">Experience</button>
+      <button class="tab-btn" onclick="openTab('skills', this)">Skills</button>
+      <button class="tab-btn" onclick="openTab('projects', this)">Projects</button>
+      <button class="tab-btn" onclick="openTab('training', this)">Training</button>
+      <button class="tab-btn" onclick="openTab('video', this)">Video CV</button>
+      <button class="tab-btn" onclick="openTab('audio', this)">Audio CV</button>
+      <button class="tab-btn" onclick="openTab('references', this)">References</button>
     </div>
+
+    <div id="profile" class="tab-content active">
+      <div class="section">
+        <h2>Career Objective</h2>
+        <p>To serve in a responsible engineering and ICT-focused role where I can effectively apply my knowledge of electrical engineering, information and communication technology, and system maintenance...</p>
+      </div>
+    </div>
+
+    <div id="personal" class="tab-content">
+      <div class="section">
+        <h2>Personal Information</h2>
+        <ul>
+          <li><strong>Nationality:</strong> Bangladeshi</li>
+          <li><strong>Hometown:</strong> Chittagong</li>
+          <li><strong>Languages:</strong> Bengali, English, Hindi</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="education" class="tab-content">
+      <div class="section">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>B.Sc. in Electrical & Electronic Engineering</h3>
+          <span>University of Chittagong | 2013–2017</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="experience" class="tab-content">
+      <div class="section">
+        <h2>Work Experience</h2>
+        <div class="item">
+          <h3>Assistant Maintenance Engineer-2</h3>
+          <span>ICT Section, Bangladesh Railway | 2024 – Present</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      © Mohammad Iftekhar Uddin Tanvir
+    </footer>
+
   </div>
-
-  <footer>
-    © Mohammad Iftekhar Uddin Tanvir
-  </footer>
-
 </div>
 
 <script>
+// --- LOGIN LOGIC ---
+function checkPassword() {
+  const password = document.getElementById('passwordInput').value;
+  const correctPassword = "1234"; // CHANGE YOUR PASSWORD HERE
+
+  if (password === correctPassword) {
+    document.getElementById('login-overlay').style.display = 'none';
+    document.getElementById('cv-content').style.display = 'block';
+  } else {
+    document.getElementById('error-msg').style.display = 'block';
+  }
+}
+
+// Allow "Enter" key to login
+document.getElementById('passwordInput').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    checkPassword();
+  }
+});
+
+// --- TAB LOGIC ---
 function openTab(tabId, btn) {
   document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-
   document.getElementById(tabId).classList.add('active');
   btn.classList.add('active');
 }
@@ -397,6 +351,3 @@ function openTab(tabId, btn) {
 
 </body>
 </html>
-
-
-
